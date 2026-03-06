@@ -384,3 +384,77 @@ h1, h2, h3 {
     font-size: 0.8rem;
     opacity: 0.6;
 }
+
+/* --- KONTAKTEERUMISE SEKTIOSON --- */
+.contact-section {
+    padding: 80px 20px;
+    max-width: 600px; /* Hoiab vormi kitsa ja tsentreerituna */
+    margin: 40px auto;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--brand-dark);
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.4); /* Translucent efekt */
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--brand-dark);
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.submit-btn {
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-pink));
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+}
