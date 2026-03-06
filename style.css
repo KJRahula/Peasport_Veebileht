@@ -458,3 +458,125 @@ h1, h2, h3 {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Üldine klaasiefektiga konteiner */
+.glass-container {
+    background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(15px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+/* Gradiendiga tekst, mida nägime su heros */
+.gradient-text {
+    background: linear-gradient(90deg, #0ea5e9, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+/* --- PORTREE- JA KITSAM MEESKONNA KAART --- */
+.team-member-card {
+    display: flex;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
+/* Vasak tulp: Kitsam (200px) */
+.member-sidebar {
+    width: 200px; /* Vähendatud laius */
+    flex-shrink: 0;
+    text-align: center; /* Sisu tsentreerimine pildi alla */
+}
+
+/* Püstine pilt */
+.member-img {
+    width: 100%;
+    height: 250px; /* Sundib portree kõrguse */
+    aspect-ratio: 4 / 5; /* Sundib portree aspekti */
+    object-fit: cover; /* Vältib moonutusi */
+    border-radius: 16px;
+    margin-bottom: 12px; /* Väiksem marginaal */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.member-sidebar h3 {
+    font-size: 1.3rem; /* Väiksem font */
+    margin-bottom: 4px; /* Väiksem marginaal */
+    color: var(--brand-dark);
+}
+
+.degree {
+    font-size: 0.8rem; /* Väiksem font */
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 12px; /* Väiksem marginaal */
+}
+
+.member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Kompaktsem vahe */
+    width: 100%; /* Võtab tulba laiuse */
+    padding: 0 10px; /* Väike polsterdus */
+}
+
+.social-icon {
+    font-size: 0.75rem; /* Väiksem font */
+    text-decoration: none;
+    color: var(--primary-pink);
+    border: 1px solid var(--primary-pink);
+    padding: 3px 8px; /* Kompaktsem polsterdus */
+    border-radius: 20px;
+    transition: 0.3s;
+    flex: 1; /* Nupud võtavad võrdse ruumi, kuid kitsas konteineris */
+    max-width: 60px; /* Piirab nupu laiust */
+}
+
+.social-icon:hover {
+    background: var(--primary-pink);
+    color: white;
+}
+
+/* Parem tulp: Tekst */
+.member-content {
+    flex-grow: 1;
+    padding-top: 5px;
+}
+
+.member-content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    text-align: left;
+    color: #334155;
+}
+
+/* Mobiili vaade */
+@media (max-width: 768px) {
+    .team-member-card {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .member-sidebar {
+        width: 100%;
+        max-width: 300px; /* Piirab laiust mobiilis */
+    }
+    .member-img {
+        height: auto;
+        aspect-ratio: unset;
+    }
+}
