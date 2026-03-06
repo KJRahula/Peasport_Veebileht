@@ -1,218 +1,61 @@
+/* 1. FONDI IMPORT JA MUUTUJAD */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Oswald:wght@500;700&display=swap');
+
+:root {
+    --primary-blue: #52c8ff;
+    --primary-pink: #ff89c4;
+    --brand-dark: #1f4e5a;
+    --text-main: #334155;
+    --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #dd9fc2 100%);
+}
+
+/* 2. ÜLDINE STIIL */
 body {
     margin: 0;
     padding: 0;
-    background-color: white;
-    font-family: sans-serif;
-}
-
-/* Päise konteiner */
-.navbar {
-    display: flex;
-    justify-content: space-between; /* Logo vasakul, nupud paremal */
-    align-items: center; /* Joondab logo ja teksti vertikaalselt keskele */
-    padding: 15px 30px; /* Lisa veidi rohkem ruumi äärtesse */
-    background-color: #f4f4f4; /* Helevalge taust */
-    border-bottom: 1px solid #ddd; /* Peen eraldusjoon */
-}
-
-/* Logo osa */
-.logo-container {
-    display: flex;
-    align-items: center;
-    text-decoration: none; /* Eemalda lingi allajoonimine */
-    color: black;
-}
-
-.logo-container img {
-    /* See on peamine osa proportsioonide hoidmiseks */
-    height: 70px; /* Muuda seda numbrit, et leida ideaalne kõrgus */
-    width: auto; /* Hoiab pildi proportsioonis */
-    max-width: 100%; /* Ei lase pildil ekraanilt välja minna */
-    display: block;
-    margin-right: 15px; /* Tühik logo ja teksti vahel */
-}
-
-/* Menüü nupud */
-.nav-right {
-    display: flex;
-    gap: 20px; /* Tühik nuppude vahel */
-}
-
-.nav-right a {
-    text-decoration: none;
-    color: black;
-    font-size: 1rem; /* Standard suurus */
-    transition: color 0.3s; /* Sujuv üleminek hoveril */
-}
-
-.nav-right a:hover {
-    color: #555; /* Muuda värvi hiirega peale minnes */
-}
-
-/* Isikute lehe stiilid */
-.isikud-container {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto; /* Keskendab sisu lehel */
-}
-
-.isik-kaart {
-    display: flex;
-    background-color: #fff;
-    border-radius: 15px; /* Ümardatud nurgad */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Õrn vari kasti ümber */
-    margin-bottom: 30px;
-    overflow: hidden; /* Hoiab pildi ümarates nurkades */
-    border: 1px solid #eee;
-}
-
-.isik-kaart img {
-    width: 200px; /* Pildi laius */
-    height: auto;
-    object-fit: cover; /* Tagab, et pilt ei veni proportsioonidest välja */
-}
-
-.isik-info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Keskendab teksti vertikaalselt pildi suhtes */
-}
-
-.isik-info h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-/* --- Esilehe (Hero) stiilid --- */
-.main-content {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-/* --- GRADIENT TEKST --- */
-.gradient-text {
-    background: linear-gradient(90deg, #0ea5e9, #ec4899); /* Sinu sinine ja roosa */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    display: inline-block;
-}
-
-/* --- SUUR ESILEHE HERO --- */
-.hero {
-    padding: 120px 20px;
-    /* Lisasin näidisena taustapildi, saad URL-i ära muuta, kui tahad oma pilti */
-    background-image: url('https://images.unsplash.com/photo-1594917631317-09d94942e617?q=80&w=2070&auto=format&fit=crop'); 
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    margin-bottom: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 1;
-}
-
-/* Poolläbipaistev kate pildi peal, et tekst oleks loetav */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255, 255, 255, 0.85); 
-    border-radius: 20px;
-    z-index: -1;
-}
-
-.hero h1 {
-    font-size: 3.5rem; /* Tegin teksti palju suuremaks */
-    margin-bottom: 20px;
-    color: #1f4e5a;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
-    color: #333;
-    font-weight: 500;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #007BFF; /* Sinine nupp */
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #0056b3; /* Tumedam sinine hiirega peal olles */
-}
-
-/* --- Teenuste kastid --- */
-.services {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 60px;
-    flex-wrap: wrap; /* Lükkab kastid mobiilis üksteise alla */
-}
-
-.service-card {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 25px;
-    width: 280px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.service-card h3 {
-    margin-top: 0;
-    color: #333;
-}
-
-.service-card p {
-    color: #666;
-    font-size: 0.95rem;
-}
-
-/* --- ÜLDINE TAUST JA VÄRVID --- */
-body {
-    margin: 0;
-    padding: 0;
-    /* Uuendatud hele sinine kuni roosa gradient, heledam ja selgemalt nähtav roosa */
-    background: linear-gradient(135deg, #e0f2fe 0%, #fce7f3 100%);
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
     min-height: 100vh;
-    font-family: sans-serif;
-    color: #333;
+    line-height: 1.6;
 }
 
-/* Heledad ja pastelsemad pealkirja värvid */
 h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    color: #1f4e5a; /* Veidi heledam tumesinine/rohekas */
+    color: var(--brand-dark);
     letter-spacing: 1px;
 }
 
-/* --- NAVBAR --- */
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* 3. NAVBAR (Läbikumav ja modernne) */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(8px);
+    padding: 12px 40px;
+    background-color: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-content {
+    padding: 0;
+    margin: 0;
+    max-width: none;
 }
 
 .logo-container {
@@ -221,63 +64,204 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-.logo-text {
-    font-weight: 900;
-    font-size: 1.8rem;
-    color: #1f4e5a; /* Veidi heledam tumesinine/rohekas */
-    margin-left: 10px;
-    letter-spacing: 2px;
+.logo-container img {
+    height: 60px;
+    width: auto;
+    margin-right: 15px;
 }
 
-/* --- KASTID JA NUPUD --- */
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #73d3ff, #ff7abd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: #ec4899;
+}
+
+.nav-contact-btn {
+    background: linear-gradient(90deg, #73d3ff, #ff7abd);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+}
+
+.nav-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+    filter: brightness(1.1);
+}
+
+/* 4. HERO SEKTSIOON (Roosa fookusega taust) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Tsentreerib vertikaalselt */
+    align-items: center;     /* Tsentreerib horisontaalselt */
+    text-align: center;
+    padding: 40px;
+    margin: 0;
+    box-sizing: border-box;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, rgba(236, 72, 153, 0) 70%);
+}
+
+.hero h1 {
+    /* Oluliselt suurem tekst suurte ekraanide jaoks */
+    font-size: clamp(3.5rem, 8vw, 6rem); 
+    line-height: 1.1;
+    margin-bottom: 30px;
+    max-width: 1200px; /* Ei lase lausel liiga laiaks minna */
+}
+
+.hero p {
+    /* Suurem ja loetavam alustekst */
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-main);
+}
+
+/* 5. UUS: MIS ON PEASPORT SEKTIOSON (Hele sinine) */
+.about-section {
+    margin-top: 0; 
+    padding: 80px 30px;
+    background-color: rgba(70, 157, 214, 0.4); 
+    backdrop-filter: blur(10px);
+    padding: 80px 30px;
+    margin: -1px 0 0 0;  /* -1px nihutab sektsiooni õrnalt üles, et peita igasugune vahe */
+    border-radius: 0;    /* Eemalda ümarad nurgad ülaosast */
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 6. TEENUSTE JA ISIKUTE KAARDID */
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
 .service-card, .isik-kaart {
     background: rgba(255, 255, 255, 0.85);
-    border: none;
+    border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover, .isik-kaart:hover {
+    transform: translateY(-5px);
+}
+
+.service-card {
+    padding: 30px;
+    width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.isik-kaart {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+}
+
+.isik-kaart img {
+    width: 220px;
+    object-fit: cover;
+}
+
+.isik-info {
+    padding: 30px;
+}
+
+/* 7. KONTAKTIVORM JA NUPUD */
+.contact-form {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
 }
 
 .cta-button {
-    display: inline-block;
-    /* Muudetud heledam sinine nupp, pastelsem */
-    background-color: #0ea5e9;
+    background-color: var(--primary-blue);
     color: white;
-    padding: 15px 30px;
+    padding: 14px 28px;
+    border-radius: 12px;
     text-decoration: none;
-    border-radius: 8px;
     font-weight: bold;
-    font-size: 1.1rem;
+    text-align: center;
     text-transform: uppercase;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    /* Tumedam sinine hover */
-    background-color: #0c8fc0;
+    background-color: #0284c7;
 }
 
-/* --- HÕLJUV NUPP (FAB) --- */
+/* 8. HÕLJUV MENÜÜ (FAB) */
 .floating-menu {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    z-index: 1000;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
 }
 
 .social-icons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.3s ease; /* Sujuv ilmumine */
+    transition: all 0.3s ease;
 }
 
-/* Näitab ikoone, kui hiir on menüü peal */
 .floating-menu:hover .social-icons {
     opacity: 1;
     visibility: visible;
@@ -285,55 +269,118 @@ h1, h2, h3 {
 }
 
 .fab-button, .icon {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    background-color: #1f4e5a; /* Brändi tumesinine */
+    background-color: var(--brand-dark);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.fab-button {
-    font-size: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .icon:hover {
-    background-color: #0ea5e9; /* Helesinine hover */
+    background-color: var(--primary-blue);
 }
 
 .footer {
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
     font-size: 0.9rem;
-    color: #555;
-    /* Eemaldatud background ja border */
+    color: var(--text-main);
+    opacity: 0.8;
 }
 
-/* --- KONTAKTIVORM --- */
-.contact-form {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
+/* --- MILLAL PÖÖRDUDA SEKTIOSON --- */
+.when-to-reach-out {
+    padding: 80px 40px;
+    max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-    box-sizing: border-box;
+.when-to-reach-out h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--brand-dark);
+}
+
+.reach-out-grid {
+    display: grid;
+    /* Tekitab 3 võrdset tulpa, mobiilis lükkab üksteise alla */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px;
+}
+
+.reach-out-card {
+    background: rgba(255, 255, 255, 0.5); /* Läbikumav klaasiefekt */
+    backdrop-filter: blur(8px);
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    text-align: left; /* Tekst on vasakul nagu su pildil */
+}
+
+.reach-out-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.reach-out-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--brand-dark);
+}
+
+.reach-out-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+/* --- FOOTER LOGOD --- */
+.footer-partners {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Õrn eraldusjoon */
+}
+
+.footer-partners p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand-dark);
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center; /* Logod keskel */
+    align-items: center;
+    gap: 20px; /* Vahe logode vahel */
+    flex-wrap: wrap; /* Mobiilis lükkab logod mitmele reale */
+}
+
+.partner-logos img {
+    height: 75px; /* Reguleeri siit logode suurust */
+    width: auto;
+    filter: grayscale(100%); /* Muudab logod halliks, et oleks elegantsem */
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.partner-logos img:hover {
+    filter: grayscale(0%); /* Hiirega peale minnes tuleb värv tagasi */
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
 }
