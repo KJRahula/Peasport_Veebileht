@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
+    <!-- Metandmed ja brauseri seaded -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peasport</title>
+    <title>Peasport - Vaimse soorituse arendamine</title>
+    <!-- Väline stiilileht -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigatsiooniriba: kasutab klaasiefekti ja püsib kerides üleval -->
     <nav class="navbar">
         <a href="index.html" class="logo-container">
-            <img src="pildid/peasport.png" alt="Peasport logo">
+            <img src="assets/img/peasport.png" alt="Peasport logo">
             <span class="logo-text">Peasport</span>
         </a>
         <div class="nav-right">
             <a href="meist.html">Meist</a>
             <a href="blogi.html">Blogi</a>
+            <!-- Kontaktinupp eristub gradiendiga -->
             <a href="#kontakt" class="nav-contact-btn">Võta ühendust</a>
         </div>
     </nav>
 
     <main class="main-content">
+        <!-- Hero sektsioon: peamine väärtuspakkumine ja visuaalne fookus -->
         <section class="hero">
             <h1>Treeni mõtlemist, <br><span class="gradient-text">valitse sooritust!</span></h1>
             <p>Füüsiline ettevalmistus on vaid pool võrrandist. Arendame sinu vaimset sitkust ja fookust, et valitseksid mängu ka kõige kriitilisematel hetkedel.</p>
         </section>
 
+        <!-- Sissejuhatav sektsioon: selgitab platvormi olemust -->
         <section class="about-section">
             <h2>Mis on Peasport?</h2>
             <p>Peasport on spordipsühholoogiale suunatud platvorm, mis pakub teaduspõhiseid meetodeid ja vaimset tuge sportlastele, treeneritele ja lapsevanematele. Meie eesmärk on aidata sul saavutada tipptulemusi, hoides samal ajal vaimset tervist ja tasakaalu.</p>
         </section>
 
+        <!-- Teenuste/murekohtade ruudustik: selgitab, millal abi otsida -->
         <section class="when-to-reach-out">
             <h2>Millal pöörduda?</h2>
             <div class="reach-out-grid">
@@ -61,6 +68,7 @@
         </section>
     </main>
 
+    <!-- Kontaktivorm: ühendatud Formspree teenusega -->
     <section id="kontakt" class="contact-section">
         <h2>Võta ühendust</h2>
         <form id="my-form" action="https://formspree.io/f/mreygery" method="POST" class="contact-form">
@@ -73,23 +81,25 @@
                 <textarea id="message" name="message" rows="5" placeholder="Kirjelda lühidalt oma muret..." required></textarea>
             </div>
             <button id="submit-btn" type="submit" class="submit-btn">Saada teade</button>
+            <!-- Staatuse teade, mida juhitakse funk.js kaudu -->
             <p id="form-status" style="text-align: center; margin-top: 20px; font-weight: bold; display: none;"></p>
         </form>
     </section>
 
+    <!-- Jalus: partnerite logod ja autoriõiguse info -->
     <footer class="footer">
         <div class="footer-partners">
             <p>Meie toetajad ja partnerid</p>
             <div class="partner-logos">
-                <img src="pildid/toetaja.png" alt="Hesburger">
-                <img src="pildid/toetaja.png" alt="Hesburger">
-                <img src="pildid/toetaja.png" alt="Hesburger">
-                <img src="pildid/toetaja.png" alt="Hesburger">
+                <img src="assets/img/toetaja.png" alt="Partner 1">
+                <img src="assets/img/toetaja.png" alt="Partner 2">
+                <img src="assets/img/toetaja.png" alt="Partner 3">
+                <img src="assets/img/toetaja.png" alt="Partner 4">
             </div>
         </div>
-        
         <p class="copyright">Lehekülje on koostanud Dagmar Rahula. Sisu on autoriõigusega kaitstud.</p>
     </footer>
+    <!-- JavaScript loogika vormi saatmiseks -->
     <script src="funk.js"></script>
 </body>
 </html>
