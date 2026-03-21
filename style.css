@@ -2,12 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Oswald:wght@500;700&display=swap');
 
 :root {
-    --primary-blue: #52c8ff;
-    --primary-pink: #ff89c4;
-    --brand-dark: #1f4e5a;
+    --primary-blue: #cff9ff;
+    --primary-pink: #f0d8fd;
+    --brand-dark: #377684;
     --text-main: #334155;
-    --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #dd9fc2 100%);
-}
+    --bg-gradient: rgba(255, 197, 197, 0.15);
+
+
+    /* tausta värvikood #ffc5c5 */
 
 /* 2. ÜLDINE STIIL */
 body {
@@ -28,10 +30,7 @@ h1, h2, h3 {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, var(--primary-blue), var(--primary-pink));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--brand-dark);
     display: inline-block;
 }
 
@@ -65,21 +64,18 @@ h1, h2, h3 {
 }
 
 .logo-container img {
-    height: 60px;
+    height: 120px;
     width: auto;
     margin-right: 15px;
 }
 
 .logo-text {
-    font-family: 'Inter', sans-serif;
+    font-family: 'League Spartan', 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 1.7rem;
+    font-size: calc(1.7rem + 5px);
     letter-spacing: -0.5px;
-    background: linear-gradient(90deg, #73d3ff, #ff7abd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: none;
+    color: var(--text-main);
+    text-transform: uppercase;
 }
 
 .nav-right {
@@ -101,16 +97,16 @@ h1, h2, h3 {
 }
 
 .nav-contact-btn {
-    background: linear-gradient(90deg, #73d3ff, #ff7abd);
+    background: var(--brand-dark);
     color: white !important;
     padding: 10px 22px;
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+    box-shadow: 0 4px 15px rgba(55, 118, 132, 0.2);
 }
 
 .nav-contact-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 6px 20px rgba(55, 118, 132, 0.3);
     filter: brightness(1.1);
 }
 
@@ -125,7 +121,8 @@ h1, h2, h3 {
     padding: 40px;
     margin: 0;
     box-sizing: border-box;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, rgba(236, 72, 153, 0) 70%);
+    background: var(--bg-gradient);
+
 }
 
 .hero h1 {
@@ -442,21 +439,23 @@ h1, h2, h3 {
 }
 
 .submit-btn {
-    background: linear-gradient(90deg, var(--primary-blue), var(--primary-pink));
+    background: var(--brand-dark);
     color: white;
-    padding: 16px;
+    padding: 10px 22px;
     border: none;
-    border-radius: 12px;
+    border-radius: 50px;
     font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(55, 118, 132, 0.2);
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 6px 20px rgba(55, 118, 132, 0.3);
+    filter: brightness(1.1);
 }
 
 html {
@@ -476,9 +475,7 @@ html {
 
 /* Gradiendiga tekst, mida nägime su heros */
 .gradient-text {
-    background: linear-gradient(90deg, #0ea5e9, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--brand-dark);
     font-weight: 800;
 }
 
