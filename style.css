@@ -35,7 +35,7 @@ h1, h2, h3 {
     display: inline-block;
 }
 
-/* 3. NAVBAR (Läbikumav ja modernne) */
+/* 3. NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -65,7 +65,7 @@ h1, h2, h3 {
 }
 
 .logo-container img {
-    height: 70px;
+    height: 60px;
     width: auto;
     margin-right: 15px;
 }
@@ -114,13 +114,13 @@ h1, h2, h3 {
     filter: brightness(1.1);
 }
 
-/* 4. HERO SEKTSIOON (Roosa fookusega taust) */
+/* 4. HERO SEKTSIOON */
 .hero {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Tsentreerib vertikaalselt */
-    align-items: center;     /* Tsentreerib horisontaalselt */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 40px;
     margin: 0;
@@ -129,30 +129,25 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-    /* Oluliselt suurem tekst suurte ekraanide jaoks */
     font-size: clamp(3.5rem, 8vw, 6rem); 
     line-height: 1.1;
     margin-bottom: 30px;
-    max-width: 1200px; /* Ei lase lausel liiga laiaks minna */
+    max-width: 1200px;
 }
 
 .hero p {
-    /* Suurem ja loetavam alustekst */
     font-size: clamp(1.2rem, 2vw, 1.8rem);
     max-width: 800px;
     margin: 0 auto;
     color: var(--text-main);
 }
 
-/* 5. UUS: MIS ON PEASPORT SEKTIOSON (Hele sinine) */
+/* 5. MIS ON PEASPORT */
 .about-section {
-    margin-top: 0; 
     padding: 80px 30px;
     background-color: rgba(70, 157, 214, 0.4); 
     backdrop-filter: blur(10px);
-    padding: 80px 30px;
-    margin: -1px 0 0 0;  /* -1px nihutab sektsiooni õrnalt üles, et peita igasugune vahe */
-    border-radius: 0;    /* Eemalda ümarad nurgad ülaosast */
+    margin: -1px 0 0 0; 
     text-align: center;
 }
 
@@ -167,133 +162,118 @@ h1, h2, h3 {
     margin: 0 auto;
 }
 
-/* 6. TEENUSTE JA ISIKUTE KAARDID */
-.services {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 40px;
-    flex-wrap: wrap;
+/* --- 6. INSTAGRAMI GRID (4:5 RATIO) --- */
+.instagram-section {
+    padding: 80px 40px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    text-align: center;
 }
 
-.service-card, .isik-kaart {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.section-header p {
+    font-weight: 600;
+    color: var(--primary-pink);
+    letter-spacing: 1px;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .instagram-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.insta-card {
+    position: relative;
+    aspect-ratio: 4 / 5; 
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f1f5f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
-.service-card:hover, .isik-kaart:hover {
+.insta-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.insta-card:hover {
     transform: translateY(-5px);
 }
 
-.service-card {
-    padding: 30px;
-    width: 280px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+.insta-card:hover img {
+    transform: scale(1.1);
 }
 
-.isik-kaart {
+.insta-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    overflow: hidden;
-}
-
-.isik-kaart img {
-    width: 220px;
-    object-fit: cover;
-}
-
-.isik-info {
-    padding: 30px;
-}
-
-/* 7. KONTAKTIVORM JA NUPUD */
-.contact-form {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 500px;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 12px;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    font-family: inherit;
-}
-
-.cta-button {
-    background-color: var(--primary-blue);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #0284c7;
-}
-
-/* 8. HÕLJUV MENÜÜ (FAB) */
-.floating-menu {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 2000;
-}
-
-.social-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
+    transition: opacity 0.3s ease;
+}
+
+.insta-card:hover .insta-overlay {
+    opacity: 1;
+}
+
+.instagram-footer {
+    margin-top: 40px;
+}
+
+.insta-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid var(--primary-pink);
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
-.floating-menu:hover .social-icons {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.fab-button, .icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background-color: var(--brand-dark);
+.insta-btn:hover {
+    background: var(--primary-pink);
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
 }
 
-.icon:hover {
-    background-color: var(--primary-blue);
+.loader {
+    grid-column: 1 / -1;
+    padding: 40px;
+    font-style: italic;
+    opacity: 0.6;
 }
 
-.footer {
-    padding: 40px 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-main);
-    opacity: 0.8;
-}
-
-/* --- MILLAL PÖÖRDUDA SEKTIOSON --- */
+/* 7. MILLAL PÖÖRDUDA */
 .when-to-reach-out {
     padding: 80px 40px;
     max-width: 1200px;
@@ -309,19 +289,18 @@ h1, h2, h3 {
 
 .reach-out-grid {
     display: grid;
-    /* Tekitab 3 võrdset tulpa, mobiilis lükkab üksteise alla */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 25px;
 }
 
 .reach-out-card {
-    background: rgba(255, 255, 255, 0.5); /* Läbikumav klaasiefekt */
+    background: rgba(255, 255, 255, 0.5); 
     backdrop-filter: blur(8px);
     padding: 35px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
-    text-align: left; /* Tekst on vasakul nagu su pildil */
+    text-align: left; 
 }
 
 .reach-out-card:hover {
@@ -342,53 +321,10 @@ h1, h2, h3 {
     color: var(--text-main);
 }
 
-/* --- FOOTER LOGOD --- */
-.footer-partners {
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Õrn eraldusjoon */
-}
-
-.footer-partners p {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--brand-dark);
-    margin-bottom: 25px;
-    opacity: 0.7;
-}
-
-.partner-logos {
-    display: flex;
-    justify-content: center; /* Logod keskel */
-    align-items: center;
-    gap: 20px; /* Vahe logode vahel */
-    flex-wrap: wrap; /* Mobiilis lükkab logod mitmele reale */
-}
-
-.partner-logos img {
-    height: 75px; /* Reguleeri siit logode suurust */
-    width: auto;
-    filter: grayscale(100%); /* Muudab logod halliks, et oleks elegantsem */
-    opacity: 0.6;
-    transition: all 0.3s ease;
-}
-
-.partner-logos img:hover {
-    filter: grayscale(0%); /* Hiirega peale minnes tuleb värv tagasi */
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-.copyright {
-    font-size: 0.8rem;
-    opacity: 0.6;
-}
-
-/* --- KONTAKTEERUMISE SEKTIOSON --- */
+/* 8. KONTAKTIVORM */
 .contact-section {
     padding: 80px 20px;
-    max-width: 600px; /* Hoiab vormi kitsa ja tsentreerituna */
+    max-width: 600px; 
     margin: 40px auto;
     text-align: center;
 }
@@ -400,7 +336,7 @@ h1, h2, h3 {
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.4); /* Translucent efekt */
+    background: rgba(255, 255, 255, 0.4); 
     backdrop-filter: blur(15px);
     padding: 40px;
     border-radius: 24px;
@@ -459,11 +395,61 @@ h1, h2, h3 {
     box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
 }
 
+/* 9. JALUS / FOOTER */
+.footer {
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    opacity: 0.8;
+}
+
+.footer-partners {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+}
+
+.footer-partners p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand-dark);
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px; 
+    flex-wrap: wrap; 
+}
+
+.partner-logos img {
+    height: 75px; 
+    width: auto;
+    filter: grayscale(100%); 
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.partner-logos img:hover {
+    filter: grayscale(0%); 
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Üldine klaasiefektiga konteiner */
 .glass-container {
     background: rgba(255, 255, 255, 0.4); 
     backdrop-filter: blur(15px);
@@ -474,76 +460,81 @@ html {
     max-width: 1000px;
 }
 
-/* Gradiendiga tekst, mida nägime su heros */
-.gradient-text {
-    background: linear-gradient(90deg, #0ea5e9, #ec4899);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 800;
+/* --- 10. KÕRVUTI MEESKONNA KAARDID --- */
+#team-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 30px;
 }
 
-/* --- PORTREE- JA KITSAM MEESKONNA KAART --- */
+@media (min-width: 800px) {
+    #team-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .team-member-card {
     display: flex;
-    gap: 40px;
+    flex-direction: column; 
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(15px);
     padding: 35px;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 30px;
-    align-items: flex-start;
+    align-items: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Vasak tulp: Kitsam (200px) */
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
 .member-sidebar {
-    width: 200px; /* Vähendatud laius */
-    flex-shrink: 0;
-    text-align: center; /* Sisu tsentreerimine pildi alla */
+    width: 100%;
+    max-width: 240px; 
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-/* Püstine pilt */
 .member-img {
     width: 100%;
-    height: 250px; /* Sundib portree kõrguse */
-    aspect-ratio: 4 / 5; /* Sundib portree aspekti */
-    object-fit: cover; /* Vältib moonutusi */
+    height: 280px; 
+    aspect-ratio: 4 / 5; 
+    object-fit: cover; 
     border-radius: 16px;
-    margin-bottom: 12px; /* Väiksem marginaal */
+    margin-bottom: 15px;
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
 .member-sidebar h3 {
-    font-size: 1.3rem; /* Väiksem font */
-    margin-bottom: 4px; /* Väiksem marginaal */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
     color: var(--brand-dark);
 }
 
 .degree {
-    font-size: 0.8rem; /* Väiksem font */
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-blue);
-    margin-bottom: 12px; /* Väiksem marginaal */
+    margin-bottom: 15px;
 }
 
 .member-socials {
     display: flex;
     justify-content: center;
-    gap: 8px; /* Kompaktsem vahe */
-    width: 100%; /* Võtab tulba laiuse */
-    padding: 0 10px; /* Väike polsterdus */
+    gap: 10px;
 }
 
 .social-icon {
-    font-size: 0.75rem; /* Väiksem font */
+    font-size: 0.8rem;
     text-decoration: none;
     color: var(--primary-pink);
     border: 1px solid var(--primary-pink);
-    padding: 3px 8px; /* Kompaktsem polsterdus */
+    padding: 6px 16px;
     border-radius: 20px;
-    transition: 0.3s;
-    flex: 1; /* Nupud võtavad võrdse ruumi, kuid kitsas konteineris */
-    max-width: 60px; /* Piirab nupu laiust */
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .social-icon:hover {
@@ -551,144 +542,18 @@ html {
     color: white;
 }
 
-/* Parem tulp: Tekst */
 .member-content {
-    flex-grow: 1;
-    padding-top: 5px;
+    width: 100%;
 }
 
 .member-content p {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     line-height: 1.7;
-    text-align: left;
+    text-align: left; 
     color: #334155;
+    font-size: 0.95rem;
 }
 
-/* Mobiili vaade */
-@media (max-width: 768px) {
-    .team-member-card {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .member-sidebar {
-        width: 100%;
-        max-width: 300px; /* Piirab laiust mobiilis */
-    }
-    .member-img {
-        height: auto;
-        aspect-ratio: unset;
-    }
-}
-
-/* --- INSTAGRAMI GRIDI STIILID --- */
-.instagram-section {
-    padding: 80px 40px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    text-align: center;
-}
-
-.section-header {
-    margin-bottom: 40px;
-}
-
-.section-header h2 {
-    font-size: 2.2rem;
-    margin-bottom: 5px;
-}
-
-.section-header p {
-    font-weight: 600;
-    color: var(--primary-pink);
-    letter-spacing: 1px;
-}
-
-.instagram-grid {
-    display: grid;
-    /* 5 veergu suurel ekraanil, 2 veergu mobiilis */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .instagram-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .instagram-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-.insta-card {
-    position: relative;
-    aspect-ratio: 4/5;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #f1f5f9;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.insta-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.insta-card:hover {
-    transform: translateY(-5px);
-}
-
-.insta-card:hover img {
-    transform: scale(1.1);
-}
-
-.insta-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.insta-card:hover .insta-overlay {
-    opacity: 1;
-}
-
-.instagram-footer {
-    margin-top: 40px;
-}
-
-.insta-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    border: 2px solid var(--primary-pink);
-    color: var(--primary-pink);
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.insta-btn:hover {
-    background: var(--primary-pink);
-    color: white;
-    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
-}
-
-.loader {
-    grid-column: 1 / -1;
-    padding: 40px;
-    font-style: italic;
-    opacity: 0.6;
+.member-content p:last-child {
+    margin-bottom: 0;
 }
