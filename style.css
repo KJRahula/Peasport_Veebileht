@@ -6,7 +6,7 @@
     --primary-pink: #f0d8fd;
     --brand-dark: #377684;
     --text-main: #334155;
-    --bg-gradient: rgba(255, 197, 197, 0.15);
+    --bg-gradient: rgba(255, 197, 197, 0.05);
 
 
     /* tausta värvikood #ffc5c5 */
@@ -144,10 +144,10 @@ h1, h2, h3 {
 /* 5. UUS: MIS ON PEASPORT SEKTIOSON (Hele sinine) */
 .about-section {
     margin-top: 0; 
-    padding: 80px 30px;
+    padding: 50px 30px;
     background-color: rgba(70, 157, 214, 0.4); 
     backdrop-filter: blur(10px);
-    padding: 80px 30px;
+    padding: 50px 30px;
     margin: -1px 0 0 0;  /* -1px nihutab sektsiooni õrnalt üles, et peita igasugune vahe */
     border-radius: 0;    /* Eemalda ümarad nurgad ülaosast */
     text-align: center;
@@ -292,7 +292,7 @@ h1, h2, h3 {
 
 /* --- MILLAL PÖÖRDUDA SEKTIOSON --- */
 .when-to-reach-out {
-    padding: 80px 40px;
+    padding: 50px 40px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -384,7 +384,7 @@ h1, h2, h3 {
 
 /* --- KONTAKTEERUMISE SEKTIOSON --- */
 .contact-section {
-    padding: 80px 20px;
+    padding: 50px 20px;
     max-width: 600px; /* Hoiab vormi kitsa ja tsentreerituna */
     margin: 40px auto;
     text-align: center;
@@ -399,7 +399,7 @@ h1, h2, h3 {
 .contact-form {
     background: rgba(255, 255, 255, 0.4); /* Translucent efekt */
     backdrop-filter: blur(15px);
-    padding: 40px;
+    padding: 30px;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
@@ -580,7 +580,7 @@ html {
 
 /* --- INSTAGRAMI GRIDI STIILID --- */
 .instagram-section {
-    padding: 80px 40px;
+    padding: 50px 40px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     text-align: center;
