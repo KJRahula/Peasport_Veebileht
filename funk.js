@@ -4,15 +4,19 @@
 const form = document.getElementById("my-form");
 const status = document.getElementById("form-status");
 
-if (form) {
+if (form && typeof CONFIG !== 'undefined') {
+    // Lisame actioni dünaamiliselt
+    form.action = CONFIG.FORMSPREE_URL;
+
     form.addEventListener("submit", async function(event) {
         event.preventDefault();
         const data = new FormData(event.target);
+        
         status.style.display = "block";
         status.innerHTML = "Saadan...";
-        
-        fetch(event.target.action, {
-            method: form.method,
+
+        fetch(CONFIG.FORMSPREE_URL, { // Kasutame konfigu väärtust
+            method: "POST",
             body: data,
             headers: { 'Accept': 'application/json' }
         }).then(response => {
