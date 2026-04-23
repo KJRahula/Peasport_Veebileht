@@ -754,20 +754,23 @@ html {
     text-align: left;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(15px);
-    padding: 60px; /* Rohkem ruumi ümber teksti */
+    padding: 60px;
     border-radius: 32px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-    font-size: 1.15rem; /* Veidi suurem tekst mugavaks lugemiseks */
+    font-size: 1.15rem;
     line-height: 1.8;
     color: var(--text-main);
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
-/* Pildid blogi teksti sees */
 .blog-post-full img {
-    max-width: 100%; /* Pilt ei lähe kunagi kastist välja */
+    width: 100%; 
     height: auto;
+    max-height: 500px;
+    object-fit: cover;
     display: block;
-    margin: 30px auto; /* Paigutab pildi keskele ja teeb vahet tekstiga */
+    margin: 40px 0; 
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }

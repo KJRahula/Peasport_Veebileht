@@ -5,6 +5,8 @@ Kuidas õigesti toituda enne ja pärast rasket treeningut? Sageli räägitakse t
 ## Aju vajab energiat
 Aju on keha kõige energianõudlikum organ. Kui sinu veresuhkur teeb trenni ajal kiireid langusi, kannatab esimesena sinu fookus ja otsustusvõime – mis on näiteks pallimängudes kriitilise tähtsusega.
 
+![Koera pilt](assets/img/dog3.jpg)
+
 ### 3 kuldreeglit võistluspäevaks:
 
 1. **Süsivesikud on aju kütus:** Enne võistlust eelista aeglaselt imenduvaid süsivesikuid (nt täisterakaerahelves), mis hoiavad energiataseme stabiilsena.

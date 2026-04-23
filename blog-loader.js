@@ -14,7 +14,7 @@ async function loadBlog() {
             
             // Teeme lugemisala laiemaks ja puhtamaks
             container.className = ""; 
-            container.style.maxWidth = "1400px"; // Suurendasime 800px pealt 1000px peale
+            container.style.maxWidth = "1400px"; 
             container.style.margin = "40px auto";
             container.style.padding = "0 20px";
 
