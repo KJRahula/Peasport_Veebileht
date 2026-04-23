@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../config"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Peaspordi_Veebileht"
+	}
+}

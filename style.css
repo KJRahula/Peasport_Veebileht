@@ -909,3 +909,22 @@ html {
     background-clip: text;
     text-fill-color: transparent;
 }
+
+/* --- ISIKUKAARDI FIRMA INFO --- */
+.member-company-info {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    opacity: 0.8;
+}
+
+.member-company-info p {
+    margin: 3px 0 !important;
+}
+
+.member-company-divider {
+    border: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.5); /* 2px teeb paksemaks, 0.5 teeb tumedamaks */
+    margin: 20px 0 15px 0;
+    width: 100%;
+}
