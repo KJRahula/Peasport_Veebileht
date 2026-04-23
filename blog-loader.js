@@ -53,16 +53,19 @@ async function loadBlog() {
             let listHtml = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">';
             
             for (const post of posts) {
+                // Eemaldame inline CSS-i ja kasutame puhtaid klasse
                 const imageHtml = post.image 
-                    ? `<img src="${post.image}" alt="${post.title}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">` 
+                    ? `<div class="blog-image-wrapper"><img src="${post.image}" alt="${post.title}"></div>` 
                     : '';
 
                 listHtml += `
-                    <div class="blog-card" style="background: rgba(255,255,255,0.4); backdrop-filter: blur(15px); padding: 30px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.3); text-align: left; display: flex; flex-direction: column;">
+                    <div class="blog-card">
                         ${imageHtml}
-                        <h2 style="margin-top: 0; color: var(--brand-dark); font-size: 1.5rem;">${post.title}</h2>
-                        <p style="color: var(--text-main); margin-bottom: 25px; flex-grow: 1;">${post.excerpt}</p>
-                        <a href="?post=${post.file}" class="cta-button" style="display: inline-block; font-size: 0.9rem; align-self: flex-start;">Loe edasi</a>
+                        <div class="blog-content-wrapper">
+                            <h2>${post.title}</h2>
+                            <p>${post.excerpt}</p>
+                            <a href="?post=${post.file}" class="blog-read-more">Loe edasi &rarr;</a>
+                        </div>
                     </div>
                 `;
             }

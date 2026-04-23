@@ -4,33 +4,32 @@
 const form = document.getElementById("my-form");
 const status = document.getElementById("form-status");
 
-if (form && typeof CONFIG !== 'undefined') {
-    // Lisame actioni dünaamiliselt
-    form.action = CONFIG.FORMSPREE_URL;
-
-    form.addEventListener("submit", async function(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        
-        status.style.display = "block";
-        status.innerHTML = "Saadan...";
-
-        fetch(CONFIG.FORMSPREE_URL, { // Kasutame konfigu väärtust
-            method: "POST",
-            body: data,
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-                status.innerHTML = "Aitäh! Sinu teade on saadetud.";
-                form.reset(); 
-            } else {
-                status.innerHTML = "Oih! Tekkis viga.";
-            }
-        }).catch(() => {
-            status.innerHTML = "Võrguviga.";
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Peatab lehe laadimise
+            
+            // Loeb vormist andmed
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Kellele meil läheb (muuda see õigeks aadressiks)
+            const vastuvotja = 'dagmarrahula@gmail.com'; 
+            
+            // Meili pealkiri
+            const subject = encodeURIComponent(`Kodulehe päring: ${name}`);
+            
+            // Meili sisu kokkupanek
+            const body = encodeURIComponent(`Nimi: ${name}\nE-post: ${email}\n\nSõnum:\n${message}`);
+            
+            // Avab kasutaja e-posti rakenduse
+            window.location.href = `mailto:${vastuvotja}?subject=${subject}&body=${body}`;
         });
-    });
-}
+    }
+});
 
 /**
  * Instagrami voo laadimine ja kuvamine

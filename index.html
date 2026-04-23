@@ -85,18 +85,23 @@
     <!-- Kontaktivorm: ühendatud Formspree teenusega -->
     <section id="kontakt" class="contact-section">
         <h2>Võta meiega ühendust</h2>
-        <form id="my-form" method="POST" class="contact-form">
+        <form id="contactForm" class="contact-form">
             <div class="form-group">
-                <label for="email">Sinu e-mail</label>
-                <input type="email" id="email" name="email" placeholder="nime@mail.ee" required>
+                <label for="name">Sinu nimi</label>
+                <input type="text" id="name" required placeholder="Sisesta oma nimi">
             </div>
+            
             <div class="form-group">
-                <label for="message">Kuidas saame aidata?</label>
-                <textarea id="message" name="message" rows="5" placeholder="Kirjelda lühidalt oma muret..." required></textarea>
+                <label for="email">Sinu e-post</label>
+                <input type="email" id="email" required placeholder="Sisesta oma e-post">
             </div>
-            <button id="submit-btn" type="submit" class="submit-btn">Saada teade</button>
-            <!-- Staatuse teade, mida juhitakse funk.js kaudu -->
-            <p id="form-status" style="text-align: center; margin-top: 20px; font-weight: bold; display: none;"></p>
+            
+            <div class="form-group">
+                <label for="message">Sõnum</label>
+                <textarea id="message" rows="5" required placeholder="Kuidas saame aidata?"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Saada päring</button>
         </form>
     </section>
 
