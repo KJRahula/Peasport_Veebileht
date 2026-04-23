@@ -83,24 +83,50 @@ h1, h2, h3 {
     gap: 30px;
 }
 
-.nav-right a {
+/* Tavalised lingid menüüs */
+.nav-right a:not(.nav-contact-btn) {
     text-decoration: none;
-    color: #334155;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
+    color: var(--text-main);
+    font-weight: 600; 
+    font-size: 1.1rem; /* MUUDETUD: Tegin teksti suuremaks (oli 0.95rem) */
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
 
-.nav-right a:hover {
-    color: #ec4899;
+/* Animatsiooniga joon hiirega peale minnes */
+.nav-right a:not(.nav-contact-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%; /* Animatsioon algab keskelt... */
+    transform: translateX(-50%);
+    background-color: var(--brand-dark); /* Kasutame sinu lehe tumedat teemavärvi */
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Sujuv kiirendus */
+    border-radius: 2px;
+}
+
+.nav-right a:not(.nav-contact-btn):hover {
+    color: var(--brand-dark); /* Tekst läheb samuti teemavärvi */
+}
+
+.nav-right a:not(.nav-contact-btn):hover::after {
+    width: 100%; /* ...ja laieneb mõlemale poole */
 }
 
 .nav-contact-btn {
     background: var(--brand-dark);
     color: white !important;
-    padding: 10px 22px;
+    padding: 12px 26px; /* MUUDETUD: Nupp on nüüd veidi suurem ja proportsioonis */
     border-radius: 50px;
     box-shadow: 0 4px 15px rgba(55, 118, 132, 0.2);
+    text-decoration: none !important; /* See eemaldab joone */
+    font-size: 1.1rem; /* MUUDETUD: Tekst on sama suur kui teistel linkidel */
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: inline-block;
 }
 
 .nav-contact-btn:hover {
