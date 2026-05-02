@@ -9,24 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Peatab lehe laadimise
+            e.preventDefault(); 
             
-            // Loeb vormist andmed
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const onNoustunud = document.getElementById('privaatsusNoustumine').checked;
+            if (!onNoustunud) {
+                alert("Sõnumi saatmiseks pead nõustuma privaatsuspoliitikaga.");
+                return;
+            }
+
             const message = document.getElementById('message').value;
-            
-            // Kellele meil läheb (muuda see õigeks aadressiks)
             const vastuvotja = 'dagmarrahula@gmail.com'; 
             
-            // Meili pealkiri
-            const subject = encodeURIComponent(`Kodulehe päring: ${name}`);
+            const teema = 'Kodulehe päring';
             
-            // Meili sisu kokkupanek
-            const body = encodeURIComponent(`Nimi: ${name}\nE-post: ${email}\n\nSõnum:\n${message}`);
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${vastuvotja}&su=${encodeURIComponent(teema)}&body=${encodeURIComponent(message)}`;
             
-            // Avab kasutaja e-posti rakenduse
-            window.location.href = `mailto:${vastuvotja}?subject=${subject}&body=${body}`;
+            window.open(gmailUrl, '_blank');
         });
     }
 });

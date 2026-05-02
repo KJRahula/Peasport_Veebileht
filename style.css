@@ -15,7 +15,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--bg-gradient);
+    /* Uus taustapilt, mis püsib paigal: */
+    background-image: url('assets/img/AI_Image2.jpg'); 
+    background-size: cover;
+    background-position: center;
     color: var(--text-main);
     min-height: 100vh;
     line-height: 1.6;
@@ -140,14 +143,16 @@ h1, h2, h3 {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Tsentreerib vertikaalselt */
-    align-items: center;     /* Tsentreerib horisontaalselt */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 40px;
     margin: 0;
     box-sizing: border-box;
-    background: var(--bg-gradient);
-
+    /* Uus pilt ja valge poolläbipaistev kiht, et tekst loetav oleks: */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('assets/img/AI_Image.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
@@ -416,6 +421,7 @@ h1, h2, h3 {
     font-family: inherit;
     font-size: 1rem;
     transition: border-color 0.3s;
+    resize: none;
 }
 
 .contact-form input:focus, 
